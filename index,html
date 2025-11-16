@@ -1,4 +1,142 @@
-<html>
-<head></head>
-<body></body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divya Tej Pendela – Cybersecurity Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f7fa;
+        color: #333;
+      }
+      header {
+        background: #0a192f;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+      h2 {
+        border-left: 4px solid #64ffda;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      }
+      ul { line-height: 1.7; }
+      footer {
+        background: #0a192f;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Divya Tej Pendela</h1>
+      <p>BSc (Hons) Cybersecurity Student • Teesside University</p>
+      <p>International Student | Aspiring Cyber Security Analyst</p>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I am a second-year Cybersecurity undergraduate at Teesside University with strong technical foundations in security systems, network defense, ethical hacking, and cloud security. I am passionate about cyber defense, phishing detection, secure system design, and developing real-world security solutions.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="card">
+        <strong>BSc (Hons) Cybersecurity – Teesside University (2023–2026)</strong>
+        <ul>
+          <li>Year 1: 2:1 Honours</li>
+          <li>Key Modules: Campus Network Design, Security Systems Design, Databases, Secure Computer & Network, Programming for Cybersecurity</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Academic Project: EnPhiSim</h2>
+      <div class="card">
+        <p>
+          EnPhiSim is an interactive phishing simulation platform designed to teach users how to detect phishing tactics through hands-on, scenario-based training. I developed multiple levels, game logic, UI components, and threat detection workflows.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="card">
+        <ul>
+          <li>Cyber Defense & Network Security</li>
+          <li>Firewalls, Access Control, IDS/IPS</li>
+          <li>Incident Response & Vulnerability Assessment</li>
+          <li>Ethical Hacking & Penetration Testing</li>
+          <li>Programming: Python, JavaScript</li>
+          <li>HTML, CSS, React.js, Databases</li>
+          <li>Cloud Security Fundamentals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="card">
+        <ul>
+          <li>Commonwealth Bank – Introduction to Cybersecurity</li>
+          <li>JPMorgan – Cybersecurity Simulation</li>
+          <li>PWC, ANZ, Datacom, Mastercard – Cybersecurity Job Simulations</li>
+          <li>Cisco Cybersecurity & Networking Certificates</li>
+          <li>Kaggle Python Certificate</li>
+          <li>Multiple Cyber.org modules (Network Defense, OS, Troubleshooting)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="card">
+        <strong>1. Mock E‑Commerce Platform</strong>
+        <p>Designed with HTML, CSS, JavaScript, and MySQL with secure login + product/cart workflow.</p>
+      </div>
+
+      <div class="card">
+        <strong>2. TU Health Guide Website Upgrade</strong>
+        <p>Rebuilding using modern full‑stack tech to replace the legacy HTML version.</p>
+      </div>
+
+      <div class="card">
+        <strong>3. ML Email Phishing Detection (2025 Research Project)</strong>
+        <p>Developing a Random Forest + SVM model to reduce phishing risks in enterprise email systems.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: pdivyatej2003@gmail.com</p>
+        <p>Credly: https://credly.com/users/divya-tej</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Divya Tej Pendela – Cybersecurity Portfolio</p>
+    </footer>
+  </body>
 </html>
