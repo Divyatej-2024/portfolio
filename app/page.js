@@ -1,3 +1,7 @@
+'use client';
+import { useFeect } from 'react';
+export default function HomePage() {
+  useEffect(() => {
 // Inject the full portfolio page dynamically
 document.body.innerHTML = `
   <div class="container">
@@ -161,3 +165,6 @@ document.addEventListener('click', e => {
 
 window.addEventListener('hashchange', render);
 window.addEventListener('DOMContentLoaded', render);
+  },[]);
+  return null;
+}
