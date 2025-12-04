@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import 'global.css';
 export default function HomePage() {
   useEffect(() => {
 // Inject the full portfolio page dynamically
