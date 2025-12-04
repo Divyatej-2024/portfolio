@@ -119,16 +119,16 @@ document.body.innerHTML = `
     <section>
       <h2>Contact</h2>
       <p style="color:#98a0ad">Reach out for graduate roles, collaborations, or project enquiries.</p>
-      <form onsubmit="event.preventDefault();alert('Demo: email pdivyatej2003@gmail.com')">
-        <label>Name</label>
-        <input placeholder="Your name">
-        <label>Email</label>
-        <input placeholder="you@example.com">
-        <label>Message</label>
-        <textarea rows="4" placeholder="Short message"></textarea>
-        <div style="margin-top:10px"><button class="btn">Send</button></div>
-      </form>
-    </section>
+   <form onsubmit="event.preventDefault(); location.href='mailto:pdivyatej2003@gmail.com?subject=Portfolio%20Contact&body=' + encodeURIComponent(document.getElementById('msg').value)">
+  <label>Name</label>
+  <input id="name" placeholder="Your name" required>
+  <label>Email</label>
+  <input id="email" placeholder="you@example.com" required>
+  <label>Message</label>
+  <textarea id="msg" rows="4" placeholder="Short message" required></textarea>
+  <div style="margin-top:10px"><button class="btn">Send</button></div>
+</form>
+
   </template>
 `;
 
