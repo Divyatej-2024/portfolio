@@ -1,5 +1,5 @@
 'use client';
-import { useFeect } from 'react';
+#import { useFeect } from 'react';
 export default function HomePage() {
   useEffect(() => {
 // Inject the full portfolio page dynamically
