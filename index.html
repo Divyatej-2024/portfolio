@@ -1,142 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divya Tej Pendela – Cybersecurity Portfolio</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f5f7fa;
-        color: #333;
-      }
-      header {
-        background: #0a192f;
-        color: white;
-        padding: 40px 20px;
-        text-align: center;
-      }
-      section {
-        padding: 40px 20px;
-        max-width: 900px;
-        margin: auto;
-      }
-      h2 {
-        border-left: 4px solid #64ffda;
-        padding-left: 10px;
-        margin-bottom: 20px;
-      }
-      .card {
-        background: white;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-      }
-      ul { line-height: 1.7; }
-      footer {
-        background: #0a192f;
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Divya Tej Pendela — Portfolio</title>
+  <meta name="description" content="Portfolio of Divya Tej Pendela — Cybersecurity & Software Development" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#0f1720; --muted:#98a0ad; --accent:#4ba3ff;
+      --glass: rgba(255,255,255,0.03);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071018 0%, #0b0f14 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:980px;margin:36px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00f5a0);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px;font-weight:600}
+    nav a.active{color:var(--accent)}
+    main{margin-top:28px;background:var(--card);padding:26px;border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:20px}
+    h1{margin:0;font-size:28px}
+    .lead{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#00f5a0);color:#021018;font-weight:700;text-decoration:none}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--glass);padding:14px;border-radius:10px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media(max-width:800px){.hero{grid-template-columns:1fr}.avatar{width:56px;height:56px}}
+
+    /* Project list */
+    .project{display:flex;flex-direction:column;gap:8px}
+    .project h3{margin:0;font-size:16px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* simple form */
+    form label{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+
+    /* micro footer links */
+    .micro{display:flex;gap:10px;justify-content:center;margin-top:10px}
+    .micro a{color:var(--muted);text-decoration:none;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
     <header>
-      <h1>Divya Tej Pendela</h1>
-      <p>BSc (Hons) Cybersecurity Student • Teesside University</p>
-      <p>International Student | Aspiring Cyber Security Analyst</p>
+      <div class="brand">
+        <div class="avatar">DT</div>
+        <div>
+          <div style="font-weight:700">Divya Tej Pendela</div>
+          <div style="font-size:13px;color:var(--muted)">BSc (Hons) Cybersecurity — Software & ML</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#/" data-link class="nav-link active">Home</a>
+        <a href="#/about" data-link class="nav-link">About</a>
+        <a href="#/projects" data-link class="nav-link">Projects</a>
+        <a href="#/skills" data-link class="nav-link">Skills</a>
+        <a href="#/contact" data-link class="nav-link">Contact</a>
+      </nav>
     </header>
 
-    <section>
-      <h2>About Me</h2>
-      <div class="card">
-        <p>
-          I am a Final-year Cybersecurity undergraduate at Teesside University with strong technical foundations in security systems, network defense, ethical hacking, and cloud security. I am passionate about cyber defense, phishing detection, secure system design, and developing real-world security solutions.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="card">
-        <strong>BSc (Hons) Cybersecurity – Teesside University (2023–2026)</strong>
-        <ul>
-          <li>Year 1: 2:1 Honours</li>
-          <li>Key Modules: Campus Network Design, Security Systems Design, Databases, Secure Computer & Network, Programming for Cybersecurity</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Academic Project: EnPhiSim</h2>
-      <div class="card">
-        <p>
-          EnPhiSim is an interactive phishing simulation platform designed to teach users how to detect phishing tactics through hands-on, scenario-based training. I developed multiple levels, game logic, UI components, and threat detection workflows.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="card">
-        <ul>
-          <li>Cyber Defense & Network Security</li>
-          <li>Firewalls, Access Control, IDS/IPS</li>
-          <li>Incident Response & Vulnerability Assessment</li>
-          <li>Ethical Hacking & Penetration Testing</li>
-          <li>Programming: Python, JavaScript</li>
-          <li>HTML, CSS, React.js, Databases</li>
-          <li>Cloud Security Fundamentals</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Certifications</h2>
-      <div class="card">
-        <ul>
-          <li>Commonwealth Bank – Introduction to Cybersecurity</li>
-          <li>JPMorgan – Cybersecurity Simulation</li>
-          <li>PWC, ANZ, Datacom, Mastercard – Cybersecurity Job Simulations</li>
-          <li>Cisco Cybersecurity & Networking Certificates</li>
-          <li>Kaggle Python Certificate</li>
-          <li>Multiple Cyber.org modules (Network Defense, OS, Troubleshooting)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="card">
-        <strong>1. Mock E‑Commerce Platform</strong>
-        <p>Designed with HTML, CSS, JavaScript, and MySQL with secure login + product/cart workflow.</p>
-      </div>
-
-      <div class="card">
-        <strong>2. TU Health Guide Website Upgrade</strong>
-        <p>Rebuilding using modern full‑stack tech to replace the legacy HTML version.</p>
-      </div>
-
-      <div class="card">
-        <strong>3. ML Email Phishing Detection (2025 Research Project)</strong>
-        <p>Developing a Random Forest + SVM model to reduce phishing risks in enterprise email systems.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: pdivyatej2003@gmail.com</p>
-        <p>Credly: https://credly.com/users/divya-tej</p>
-      </div>
-    </section>
+    <main id="app">
+      <!-- dynamic content will be injected here -->
+    </main>
 
     <footer>
-      <p>© 2025 Divya Tej Pendela – Cybersecurity Portfolio</p>
+      <div class="micro">
+        <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291" target="_blank">LinkedIn</a>
+        <a href="https://portfolio-divya-tej-pendela.vercel.app/" target="_blank">Live Portfolio</a>
+        <a href="#/projects" data-link>GitHub</a>
+      </div>
+      <div style="margin-top:8px;color:var(--muted)">Made with focus on clarity • © Divya Tej Pendela</div>
     </footer>
-  </body>
+  </div>
+
+  <!-- Templates for each "page" -->
+  <template id="tpl-home">
+    <section class="hero">
+      <div>
+        <h1>Hi — I'm Divya, a Cybersecurity & Software Developer.</h1>
+        <p class="lead">I build secure web apps, ML models for threat detection, and infrastructure designs for scalable networks. I’m graduating in May 2026 and seeking graduate roles in FinTech and software engineering.</p>
+        <p style="margin-top:12px"><a class="btn" href="#/projects" data-link>View Projects</a> <a style="margin-left:10px;color:var(--muted);text-decoration:none" href="#/contact" data-link>Contact</a></p>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="card">
+            <strong>Availability</strong>
+            <div style="color:var(--muted);margin-top:6px">Full-time from Sep 2026 • Eligible to work in UK</div>
+          </div>
+          <div class="card">
+            <strong>Current</strong>
+            <div style="color:var(--muted);margin-top:6px">British Applied College & Teesside University — Research Intern (ML for email security)</div>
+          </div>
+          <div class="card">
+            <strong>Contact</strong>
+            <div style="color:var(--muted);margin-top:6px">pdivyatej2003@gmail.com • 07776751102</div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Snapshot</h3>
+          <p class="lead" style="margin-top:6px;color:var(--muted)">Python · JavaScript · ML · PenTesting · IPv6 · Secure APIs</p>
+          <div style="margin-top:12px"><a class="btn" href="#/about" data-link>Learn more</a></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Quick Links</strong>
+          <div style="margin-top:8px;color:var(--muted);font-size:14px">CV • Portfolio • GitHub</div>
+        </div>
+      </aside>
+    </section>
+  </template>
+
+  <template id="tpl-about">
+    <section>
+      <h2>About Me</h2>
+      <p class="lead">I’m a BSc (Hons) Cybersecurity student at Teesside University (graduating May 2026). My work blends software development and security: I’ve built full-stack web apps, implemented ML models for phishing detection, and designed enterprise network infrastructure with IPv6.</p>
+      <div class="grid">
+        <div class="card">
+          <strong>Education</strong>
+          <div style="color:var(--muted);margin-top:6px">Teesside University — BSc (Hons) Cybersecurity (2:1 predicted)</div>
+        </div>
+        <div class="card">
+          <strong>Certifications</strong>
+          <div style="color:var(--muted);margin-top:6px">Cisco, Kaggle (Python), Multiple cybersecurity job simulations (JPMorgan, Mastercard, PwC)</div>
+        </div>
+        <div class="card">
+          <strong>Interests</strong>
+          <div style="color:var(--muted);margin-top:6px">FinTech, secure systems, ML for security, backend engineering</div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-projects">
+    <section>
+      <h2>Projects (brief)</h2>
+      <div class="project card">
+        <h3>ML-Based Phishing Detector — Research</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">Data Processing</span></div>
+        <p style="color:var(--muted)">Built preprocessing pipeline and compared Random Forest vs SVM models to classify phishing emails. Focused on precision and enterprise deployment considerations.</p>
+      </div>
+
+      <div class="project card" style="margin-top:12px">
+        <h3>Full-Stack E-Commerce Mock</h3>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div>
+        <p style="color:var(--muted)">Dynamic product catalog, cart logic, and mock payment flow—designed secure authentication and basic backend endpoints.</p>
+      </div>
+
+      <div class="project card" style="margin-top:12px">
+        <h3>Data Centre IPv6 Plan</h3>
+        <div class="tags"><span class="tag">Networking</span><span class="tag">IPv6</span><span class="tag">Design</span></div>
+        <p style="color:var(--muted)">Enterprise addressing using 2001:db8:abcd::/48 with /64 subnets for VLANs, routing and firewall rules documented.</p>
+      </div>
+
+      <p style="margin-top:12px;color:var(--muted)">For full repos and write-ups, link to GitHub on the live portfolio.</p>
+    </section>
+  </template>
+
+  <template id="tpl-skills">
+    <section>
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Programming</strong>
+          <div style="color:var(--muted);margin-top:6px">Python · JavaScript · SQL · Bash · HTML/CSS</div>
+        </div>
+        <div class="card">
+          <strong>Security</strong>
+          <div style="color:var(--muted);margin-top:6px">Penetration testing · Incident response · Vulnerability assessment · Firewalls</div>
+        </div>
+        <div class="card">
+          <strong>Tools</strong>
+          <div style="color:var(--muted);margin-top:6px">Wireshark · Burp Suite · Metasploit · Git · Packet Tracer</div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-contact">
+    <section>
+      <h2>Contact</h2>
+      <p class="lead">Feel free to reach out for graduate roles, collaborations, or project enquiries.</p>
+      <form onsubmit="event.preventDefault();alert('Form demo — email: pdivyatej2003@gmail.com')">
+        <label for="name">Name</label>
+        <input id="name" placeholder="Your name" />
+        <label for="email">Email</label>
+        <input id="email" placeholder="you@example.com" />
+        <label for="msg">Message</label>
+        <textarea id="msg" rows="4" placeholder="Short message"></textarea>
+        <div style="margin-top:10px"><button class="btn">Send message</button></div>
+      </form>
+    </section>
+  </template>
+
+  <script>
+    // Simple client-side router using hash routes + dynamic injection from templates
+    const routes = {
+      '/': 'tpl-home',
+      '/about': 'tpl-about',
+      '/projects': 'tpl-projects',
+      '/skills': 'tpl-skills',
+      '/contact': 'tpl-contact'
+    };
+
+    function setActiveNav(path){
+      document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
+      const link = document.querySelector(`nav a[href="#${path}"]`);
+      if(link) link.classList.add('active');
+    }
+
+    function render(){
+      const hash = location.hash.replace('#','') || '/';
+      const tplId = routes[hash] ? routes[hash] : 'tpl-home';
+      const tpl = document.getElementById(tplId);
+      const app = document.getElementById('app');
+      app.innerHTML = tpl.innerHTML;
+      setActiveNav(hash);
+      // small UX: focus first heading
+      const h = app.querySelector('h2, h1'); if(h) h.tabIndex = -1; try{h && h.focus()}catch(e){}
+    }
+
+    // attach link handlers for internal links
+    document.addEventListener('click', e=>{
+      const a = e.target.closest('a[data-link]');
+      if(!a) return;
+      e.preventDefault();
+      const href = a.getAttribute('href');
+      location.hash = href.replace('#','');
+    });
+
+    window.addEventListener('hashchange', render);
+    // initial render
+    render();
+  </script>
+</body>
 </html>
