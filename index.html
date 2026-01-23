@@ -7,14 +7,13 @@
   <meta name="description" content="Portfolio of Divya Tej Pendela — Cybersecurity & Software Development" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
   <style>
-    /* Certifications Page Styles */
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  
 .cert-card {
   background: var(--glass);
   padding: 16px;
@@ -118,7 +117,111 @@
 
     /* responsive */
     @media(max-width:800px){.hero{grid-template-columns:1fr}.avatar{width:56px;height:56px}}
+/* ===== Navigation Bar Improvements ===== */
+nav {
+  display: flex;
+  gap: 4px;
+}
 
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #e6eef6;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background: rgba(75, 163, 255, 0.1);
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #00f5a0);
+  border-radius: 2px;
+}
+
+/* Mobile Navigation Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  nav.active {
+    max-height: 400px;
+    padding-top: 10px;
+  }
+  
+  .nav-link {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    margin-left: 0;
+  }
+  
+  .nav-link.active::after {
+    display: none;
+  }
+  
+  .nav-link.active {
+    background: rgba(75, 163, 255, 0.15);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .brand {
+    width: 100%;
+  }
+}
     /* Project list */
     .project{display:flex;flex-direction:column;gap:8px}
     .project h3{margin:0;font-size:16px}
@@ -137,22 +240,28 @@
 <body>
   <div class="container">
     <header>
-      <div class="brand">
-        <div class="avatar">DT</div>
-        <div>
-          <div style="font-weight:700">Divya Tej Pendela</div>
-          <div style="font-size:13px;color:var(--muted)">BSc (Hons) Cybersecurity — Software & ML</div>
-        </div>
-      </div>
-      <nav aria-label="Primary">
-        <a href="#/" data-link class="nav-link active">Home</a>
-        <a href="#/about" data-link class="nav-link">About</a>
-        <a href="#/projects" data-link class="nav-link">Projects</a>
-        <a href="#/skills" data-link class="nav-link">Skills</a>
-        <a href="#/certificates" data-link class="nav-link">Certificates</a>
-        <a href="#/contact" data-link class="nav-link">Contact</a>
-      </nav>
-    </header>
+  <div class="brand">
+    <div class="avatar">DT</div>
+    <div>
+      <div style="font-weight:700">Divya Tej Pendela</div>
+      <div style="font-size:13px;color:var(--muted)">BSc (Hons) Cybersecurity — Software & ML</div>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+  
+  <nav aria-label="Primary" id="mainNav">
+    <a href="#/" data-link class="nav-link active">Home</a>
+    <a href="#/about" data-link class="nav-link">About</a>
+    <a href="#/projects" data-link class="nav-link">Projects</a>
+    <a href="#/skills" data-link class="nav-link">Skills</a>
+    <a href="#/certificates" data-link class="nav-link">Certificates</a>
+    <a href="#/contact" data-link class="nav-link">Contact</a>
+  </nav>
+</header>
 
     <main id="app">
       <!-- dynamic content will be injected here -->
@@ -458,26 +567,43 @@
     </div>
   </section>
 </template>
-  <template id="tpl-skills">
-    <section>
-      <h2>Skills</h2>
-      <div class="grid">
+ <template id="tpl-skills">
+  <section>
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Programming & Development</strong>
+        <div style="color:var(--muted);margin-top:6px">Python · JavaScript · SQL · Bash · HTML/CSS · Git</div>
+      </div>
+      <div class="card">
+        <strong>Security & Cybersecurity</strong>
+        <div style="color:var(--muted);margin-top:6px">Penetration Testing · Incident Response · Vulnerability Assessment · Firewalls · Zero Trust</div>
+      </div>
+      <div class="card">
+        <strong>Microsoft & Cloud Tools</strong>
+        <div style="color:var(--muted);margin-top:6px">Microsoft Entra ID · Defender XDR · Sentinel · M365 Security · Azure Security</div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 30px;">
+      <h3>Certified Knowledge Areas</h3>
+      <div class="grid" style="margin-top: 15px;">
         <div class="card">
-          <strong>Programming</strong>
-          <div style="color:var(--muted);margin-top:6px">Python · JavaScript · SQL · Bash · HTML/CSS</div>
+          <strong>Identity & Access Management</strong>
+          <div style="color:var(--muted);margin-top:6px">Microsoft Entra ID · Authentication · Authorization · Privileged Access</div>
         </div>
         <div class="card">
-          <strong>Security</strong>
-          <div style="color:var(--muted);margin-top:6px">Penetration testing · Incident response · Vulnerability assessment · Firewalls</div>
+          <strong>Cloud Security Architecture</strong>
+          <div style="color:var(--muted);margin-top:6px">Zero Trust · CAF · WAF · MCRA · Cloud Security Benchmark</div>
         </div>
         <div class="card">
-          <strong>Tools</strong>
-          <div style="color:var(--muted);margin-top:6px">Wireshark · Burp Suite · Metasploit · Git · Packet Tracer</div>
+          <strong>Threat Protection</strong>
+          <div style="color:var(--muted);margin-top:6px">Defender XDR · Sentinel · Cloud Apps Security · Ransomware Defense</div>
         </div>
       </div>
-    </section>
-  </template>
-
+    </div>
+  </section>
+</template>
   <template id="tpl-contact">
     <section>
       <h2>Contact</h2>
@@ -494,80 +620,114 @@
     </section>
   </template>
 
-  <script>
-    // Simple client-side router using hash routes + dynamic injection from templates
-    const routes = {
-      '/': 'tpl-home',
-      '/about': 'tpl-about',
-      '/projects': 'tpl-projects',
-      '/skills': 'tpl-skills',
-      '/certificates': 'tpl-certificates',
-      '/contact': 'tpl-contact'
-    };
-    // Certification Filtering Functionality
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('filter-btn')) {
-        // Update active button
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-          btn.classList.remove('active');
+ <script>
+  // Simple client-side router using hash routes + dynamic injection from templates
+  const routes = {
+    '/': 'tpl-home',
+    '/about': 'tpl-about',
+    '/projects': 'tpl-projects',
+    '/skills': 'tpl-skills',
+    '/certificates': 'tpl-certificates',
+    '/contact': 'tpl-contact'
+  };
+
+  function setActiveNav(path){
+    document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
+    const link = document.querySelector(`nav a[href="#${path}"]`);
+    if(link) link.classList.add('active');
+  }
+
+  function render(){
+    const hash = location.hash.replace('#','') || '/';
+    const tplId = routes[hash] ? routes[hash] : 'tpl-home';
+    const tpl = document.getElementById(tplId);
+    const app = document.getElementById('app');
+    app.innerHTML = tpl.innerHTML;
+    setActiveNav(hash);
+    
+    // Initialize filter when certificates page loads
+    if (hash === '/certificates') {
+      setTimeout(initCertificatesFilter, 50);
+    }
+    
+    // small UX: focus first heading
+    const h = app.querySelector('h2, h1'); 
+    if(h) h.tabIndex = -1; 
+    try{h && h.focus()}catch(e){}
+  }
+
+  // Certification Filtering Functionality
+  function initCertificatesFilter() {
+    // Set all filter buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    if (filterButtons.length > 0) {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+      
+      // Add click listeners
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Update active button
+          filterButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter certifications
+          const filter = this.dataset.filter;
+          const certs = document.querySelectorAll('.cert-card');
+          
+          certs.forEach(cert => {
+            if (filter === 'all' || cert.dataset.category === filter || cert.classList.contains('view-all')) {
+              cert.style.display = 'block';
+            } else {
+              cert.style.display = 'none';
+            }
+          });
         });
-        e.target.classList.add('active');
-        
-        // Filter certifications
-        const filter = e.target.dataset.filter;
-        const certs = document.querySelectorAll('.cert-card');
-        
-        certs.forEach(cert => {
-          if (filter === 'all' || cert.dataset.category === filter || cert.classList.contains('view-all')) {
-            cert.style.display = 'block';
-          } else {
-            cert.style.display = 'none';
-          }
-        });
+      });
+    }
+  }
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    menuToggle.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+  });
+  
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        mainNav.classList.remove('active');
+        menuToggle.textContent = '☰';
       }
     });
-
-    // Initialize filter on certificates page load
-    function initCertificatesFilter() {
-      if (location.hash.includes('certificates')) {
-        setTimeout(() => {
-          document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-          document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
-        }, 100);
-      }
+  });
+  
+  // Close menu on window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      mainNav.classList.remove('active');
+      menuToggle.textContent = '☰';
     }
+  });
+}
+  // attach link handlers for internal links
+  document.addEventListener('click', e=>{
+    const a = e.target.closest('a[data-link]');
+    if(!a) return;
+    e.preventDefault();
+    const href = a.getAttribute('href');
+    location.hash = href.replace('#','');
+  });
 
-    // Call init on hash change
-    window.addEventListener('hashchange', initCertificatesFilter);
-    function setActiveNav(path){
-      document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
-      const link = document.querySelector(`nav a[href="#${path}"]`);
-      if(link) link.classList.add('active');
-    }
-
-    function render(){
-      const hash = location.hash.replace('#','') || '/';
-      const tplId = routes[hash] ? routes[hash] : 'tpl-home';
-      const tpl = document.getElementById(tplId);
-      const app = document.getElementById('app');
-      app.innerHTML = tpl.innerHTML;
-      setActiveNav(hash);
-      // small UX: focus first heading
-      const h = app.querySelector('h2, h1'); if(h) h.tabIndex = -1; try{h && h.focus()}catch(e){}
-    }
-
-    // attach link handlers for internal links
-    document.addEventListener('click', e=>{
-      const a = e.target.closest('a[data-link]');
-      if(!a) return;
-      e.preventDefault();
-      const href = a.getAttribute('href');
-      location.hash = href.replace('#','');
-    });
-
-    window.addEventListener('hashchange', render);
-    // initial render
-    render();
-  </script>
+  window.addEventListener('hashchange', render);
+  // initial render
+  render();
+</script>
 </body>
 </html>
