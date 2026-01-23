@@ -7,6 +7,93 @@
   <meta name="description" content="Portfolio of Divya Tej Pendela — Cybersecurity & Software Development" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
   <style>
+    /* Certifications Page Styles */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cert-card {
+  background: var(--glass);
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cert-card.view-all {
+  background: linear-gradient(135deg, rgba(75, 163, 255, 0.1), rgba(0, 245, 160, 0.1));
+  border-left: 4px solid #00f5a0;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.cert-category {
+  background: rgba(75, 163, 255, 0.2);
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.cert-date {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cert-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.cert-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 12px 0;
+}
+
+.filter-btn {
+  cursor: pointer;
+  border: none;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #021018;
+  font-weight: 700;
+}
+
+.filter-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tags {
+    flex-wrap: wrap;
+  }
+}
     :root{
       --bg:#0b0f14; --card:#0f1720; --muted:#98a0ad; --accent:#4ba3ff;
       --glass: rgba(255,255,255,0.03);
@@ -106,11 +193,13 @@
       </div>
 
       <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Snapshot</h3>
-          <p class="lead" style="margin-top:6px;color:var(--muted)">Python · JavaScript · ML · PenTesting · IPv6 · Secure APIs</p>
-          <div style="margin-top:12px"><a class="btn" href="#/about" data-link>Learn more</a></div>
-        </div>
+<div class="card">
+  <h3 style="margin-top:0">Snapshot</h3>
+  <p class="lead" style="margin-top:6px;color:var(--muted)">Python · JavaScript · ML · PenTesting · IPv6 · Secure APIs</p>
+  <!-- Add this line -->
+  <p style="margin-top:8px;font-size:14px;color:#4ba3ff">✓ 24 Microsoft Certifications</p>
+  <div style="margin-top:12px"><a class="btn" href="#/certificates" data-link>View Certificates</a></div>
+</div>
 
         <div class="card" style="margin-top:12px">
           <strong>Quick Links</strong>
@@ -129,10 +218,10 @@
           <strong>Education</strong>
           <div style="color:var(--muted);margin-top:6px">Teesside University — BSc (Hons) Cybersecurity (2:1 predicted)</div>
         </div>
-        <div class="card">
-          <strong>Certifications</strong>
-          <div style="color:var(--muted);margin-top:6px">Cisco, Kaggle (Python), Multiple cybersecurity job simulations (JPMorgan, Mastercard, PwC)</div>
-        </div>
+       <div class="card">
+  <strong>Certifications</strong>
+  <div style="color:var(--muted);margin-top:6px">24 Microsoft Learn (Security, Cloud, M365), Cisco, Kaggle Python, Cybersecurity job simulations (JPMorgan, Mastercard, PwC)</div>
+</div>
         <div class="card">
           <strong>Interests</strong>
           <div style="color:var(--muted);margin-top:6px">FinTech, secure systems, ML for security, backend engineering</div>
@@ -167,24 +256,208 @@
   </template>
 
    <template id="tpl-certificates">
-    <section>
-      <h2>Certificates</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Programming</strong>
-          <div style="color:var(--muted);margin-top:6px">Python · JavaScript · SQL · Bash · HTML/CSS</div>
+  <section>
+    <h2>Microsoft Learn Certifications</h2>
+    <p class="lead">I've completed over 20+ Microsoft Learn certifications focusing on cloud security, identity management, threat protection, and Microsoft 365 solutions.</p>
+    
+    <!-- Certification Counter Badge -->
+    <div style="background: linear-gradient(90deg, var(--accent), #00f5a0); color: #021018; padding: 8px 16px; border-radius: 8px; display: inline-block; margin-bottom: 20px; font-weight: 700;">
+      24 Microsoft Certifications
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="tags" style="margin-bottom: 20px;">
+      <button class="tag filter-btn active" data-filter="all">All</button>
+      <button class="tag filter-btn" data-filter="identity">Identity</button>
+      <button class="tag filter-btn" data-filter="security">Security</button>
+      <button class="tag filter-btn" data-filter="cloud">Cloud</button>
+      <button class="tag filter-btn" data-filter="m365">M365</button>
+      <button class="tag filter-btn" data-filter="operations">Operations</button>
+    </div>
+
+    <!-- Certifications Grid -->
+    <div class="certifications-grid">
+      <!-- Identity & Access Management -->
+      <div class="cert-card" data-category="identity">
+        <div class="cert-header">
+          <span class="cert-category">Identity & Access</span>
+          <span class="cert-date">Aug 2025</span>
         </div>
-        <div class="card">
-          <strong>Security</strong>
-          <div style="color:var(--muted);margin-top:6px">Penetration testing · Incident response · Vulnerability assessment · Firewalls</div>
-        </div>
-        <div class="card">
-          <strong>Tools</strong>
-          <div style="color:var(--muted);margin-top:6px">Wireshark · Burp Suite · Metasploit · Git · Packet Tracer</div>
+        <h3>Modernizing Identity and Data Security</h3>
+        <p class="cert-subtitle">Interactive Case Study • Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Azure Security</span>
+          <span class="tag">Entra ID</span>
+          <span class="tag">Zero Trust</span>
         </div>
       </div>
-    </section>
-  </template>
+
+      <div class="cert-card" data-category="identity">
+        <div class="cert-header">
+          <span class="cert-category">Identity & Access</span>
+          <span class="cert-date">Aug 2025</span>
+        </div>
+        <h3>Modernizing User Access Control</h3>
+        <p class="cert-subtitle">Interactive Case Study • Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Access Control</span>
+          <span class="tag">Threat Resilience</span>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="identity">
+        <div class="cert-header">
+          <span class="cert-category">Identity & Access</span>
+          <span class="cert-date">Dec 2024</span>
+        </div>
+        <h3>Manage Identities in Microsoft Entra ID</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Entra ID</span>
+          <span class="tag">IAM</span>
+        </div>
+      </div>
+
+      <!-- Security & Threat Protection -->
+      <div class="cert-card" data-category="security">
+        <div class="cert-header">
+          <span class="cert-category">Threat Protection</span>
+          <span class="cert-date">Aug 2025</span>
+        </div>
+        <h3>Introduction to Microsoft Defender XDR</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Defender XDR</span>
+          <span class="tag">Threat Protection</span>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="security">
+        <div class="cert-header">
+          <span class="cert-category">Security</span>
+          <span class="cert-date">Jun 2025</span>
+        </div>
+        <h3>Microsoft Sentinel Security Capabilities</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Sentinel</span>
+          <span class="tag">SIEM</span>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="security">
+        <div class="cert-header">
+          <span class="cert-category">Security</span>
+          <span class="cert-date">Oct 2024</span>
+        </div>
+        <h3>Design Solutions for Security Operations</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">SecOps</span>
+          <span class="tag">Design</span>
+        </div>
+      </div>
+
+      <!-- Cloud Security & Architecture -->
+      <div class="cert-card" data-category="cloud">
+        <div class="cert-header">
+          <span class="cert-category">Cloud Security</span>
+          <span class="cert-date">Dec 2024</span>
+        </div>
+        <h3>Design Solutions for Securing Data</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Data Security</span>
+          <span class="tag">Cloud</span>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="cloud">
+        <div class="cert-header">
+          <span class="cert-category">Cloud Security</span>
+          <span class="cert-date">Jul 2024</span>
+        </div>
+        <h3>Introduction to Zero Trust</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Zero Trust</span>
+          <span class="tag">Frameworks</span>
+        </div>
+      </div>
+
+      <!-- Microsoft 365 -->
+      <div class="cert-card" data-category="m365">
+        <div class="cert-header">
+          <span class="cert-category">Microsoft 365</span>
+          <span class="cert-date">Mar 2025</span>
+        </div>
+        <h3>Design Solutions for Securing M365</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">M365 Security</span>
+          <span class="tag">Design</span>
+        </div>
+      </div>
+
+      <div class="cert-card" data-category="m365">
+        <div class="cert-header">
+          <span class="cert-category">Microsoft 365</span>
+          <span class="cert-date">Jun 2025</span>
+        </div>
+        <h3>Microsoft 365 Collaboration Solutions</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">M365</span>
+          <span class="tag">Collaboration</span>
+        </div>
+      </div>
+
+      <!-- Compliance & Operations -->
+      <div class="cert-card" data-category="operations">
+        <div class="cert-header">
+          <span class="cert-category">Compliance</span>
+          <span class="cert-date">Oct 2024</span>
+        </div>
+        <h3>Design Solutions for Regulatory Compliance</h3>
+        <p class="cert-subtitle">Microsoft Learn</p>
+        <div class="tags">
+          <span class="tag">Compliance</span>
+          <span class="tag">Governance</span>
+        </div>
+      </div>
+
+      <!-- View All Button -->
+      <div class="cert-card view-all">
+        <div class="cert-header">
+          <span class="cert-category">All Certifications</span>
+          <span class="cert-date">2024-2025</span>
+        </div>
+        <h3>View Complete List</h3>
+        <p class="cert-subtitle">24 Microsoft Learn achievements including cloud fundamentals, security design, and case studies</p>
+        <div class="tags">
+          <span class="tag">Microsoft Certified</span>
+          <span class="tag">Verified</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="grid" style="margin-top: 30px;">
+      <div class="card">
+        <strong>Certification Areas</strong>
+        <div style="color: var(--muted); margin-top: 6px;">Identity • Cloud Security • Threat Protection • M365 • Compliance</div>
+      </div>
+      <div class="card">
+        <strong>Verification</strong>
+        <div style="color: var(--muted); margin-top: 6px;">All certificates verified by Microsoft Learn • Available upon request</div>
+      </div>
+      <div class="card">
+        <strong>Timeline</strong>
+        <div style="color: var(--muted); margin-top: 6px;">Jul 2024 → Aug 2025 • Progressive learning path</div>
+      </div>
+    </div>
+  </section>
+</template>
   <template id="tpl-skills">
     <section>
       <h2>Skills</h2>
@@ -231,7 +504,41 @@
       '/certificates': 'tpl-certificates',
       '/contact': 'tpl-contact'
     };
+    // Certification Filtering Functionality
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('filter-btn')) {
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        
+        // Filter certifications
+        const filter = e.target.dataset.filter;
+        const certs = document.querySelectorAll('.cert-card');
+        
+        certs.forEach(cert => {
+          if (filter === 'all' || cert.dataset.category === filter || cert.classList.contains('view-all')) {
+            cert.style.display = 'block';
+          } else {
+            cert.style.display = 'none';
+          }
+        });
+      }
+    });
 
+    // Initialize filter on certificates page load
+    function initCertificatesFilter() {
+      if (location.hash.includes('certificates')) {
+        setTimeout(() => {
+          document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+          document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+        }, 100);
+      }
+    }
+
+    // Call init on hash change
+    window.addEventListener('hashchange', initCertificatesFilter);
     function setActiveNav(path){
       document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
       const link = document.querySelector(`nav a[href="#${path}"]`);
