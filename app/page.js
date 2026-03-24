@@ -48,9 +48,14 @@ document.body.innerHTML = `
   <template id="tpl-home">
     <section class="hero">
       <div>
+        <div class="eyebrow">Graduate Cybersecurity • Software & ML</div>
         <h1>Hi — I'm Divya, a Cybersecurity & Software Developer.</h1>
         <p class="lead">I build secure web apps, ML models for threat detection, and infrastructure designs for scalable networks. I’m graduating in May 2026 and seeking graduate roles in FinTech and software engineering.</p>
-        <p style="margin-top:12px"><a class="btn" href="#/projects" data-link>View Projects</a> <a style="margin-left:10px;color:var(--muted);text-decoration:none" href="#/contact" data-link>Contact</a></p>
+        <div style="margin-top:12px">
+          <a class="btn" href="#/projects" data-link>View Projects</a>
+          <a style="margin-left:10px;color:var(--muted);text-decoration:none" href="#/contact" data-link>Contact</a>
+          <span style="margin-left:12px" class="badge">Available Sep 2026</span>
+        </div>
 
         <div class="grid" style="margin-top:18px">
           <div class="card">
@@ -72,8 +77,7 @@ document.body.innerHTML = `
 <div class="card">
   <h3 style="margin-top:0">Snapshot</h3>
   <p class="lead" style="margin-top:6px;color:var(--muted)">Python · JavaScript · ML · PenTesting · IPv6 · Secure APIs</p>
-  <!-- Add this line -->
-  <p style="margin-top:8px;font-size:14px;color:#4ba3ff">✓ 24 Microsoft Certifications</p>
+  <p style="margin-top:8px;font-size:14px;color:var(--accent)">✓ 24 Microsoft Certifications</p>
   <div style="margin-top:12px"><a class="btn" href="#/certificates" data-link>View Certificates</a></div>
 </div>
 
@@ -375,7 +379,7 @@ document.body.innerHTML = `
     <section>
       <h2>Contact</h2>
       <p class="lead">Feel free to reach out for graduate roles, collaborations, or project enquiries.</p>
-      <form onsubmit="event.preventDefault();alert('Form demo — email: pdivyatej2003@gmail.com')">
+      <form onsubmit="event.preventDefault();var name=document.getElementById('name').value||'Visitor';var email=document.getElementById('email').value||'';var msg=document.getElementById('msg').value||'';var subject=encodeURIComponent('Portfolio message from '+name);var body=encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+msg);window.location.href='mailto:pdivyatej2003@gmail.com?subject='+subject+'&body='+body;">
         <label for="name">Name</label>
         <input id="name" placeholder="Your name" />
         <label for="email">Email</label>
