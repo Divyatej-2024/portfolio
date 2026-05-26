@@ -59,7 +59,7 @@ export default function HomePage() {
             <div className="space-y-5">
               <div className="flex items-center justify-center">
                 <div className="relative h-40 w-40 rounded-full border-4 border-white/6 overflow-hidden shadow-glow">
-                  <Image src="/images/pendela Divya Tej.png" alt="Divya Tej Pendela" fill sizes="(max-width: 768px) 120px, 160px" className="object-cover" />
+                  <Image src="/images/profile.png" alt="Divya Tej Pendela" fill sizes="(max-width: 768px) 120px, 160px" className="object-cover" />
                 </div>
               </div>
               <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Resume summary</p>
@@ -73,6 +73,10 @@ export default function HomePage() {
               <p className="text-lg font-semibold text-slate-100">pdivyatej2003@gmail.com</p>
               <p className="text-lg font-semibold text-slate-100">+44 7776 751102</p>
               <p className="text-sm text-slate-400">Available for graduate roles in cybersecurity and FinTech engineering from September 2026.</p>
+              <div className="mt-3 flex gap-3">
+                <a href="https://github.com/Divyatej-2024" className="text-sky-400 hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" className="text-sky-400 hover:underline">LinkedIn</a>
+              </div>
             </div>
           </div>
         </section>
