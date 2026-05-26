@@ -81,17 +81,19 @@ export function CertificationDashboard({ certifications }: CertificationDashboar
               Explore every verified certificate, preview the original PDF instantly, and surface skills from each award. This page is built to impress hiring managers with a professional certification portfolio, security maturity, and dynamic filtering.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-3xl bg-slate-900/90 p-5 ring-1 ring-white/10">
-              <p className="text-sm text-slate-400">Certificates indexed</p>
-              <p className="mt-3 text-3xl font-semibold text-slate-100">{certifications.length}</p>
-            </div>
-            <div className="rounded-3xl bg-slate-900/90 p-5 ring-1 ring-white/10">
-              <p className="text-sm text-slate-400">Skills surfaces</p>
-              <p className="mt-3 text-3xl font-semibold text-slate-100">{skillOptions.length - 1}</p>
-            </div>
-          </div>
-        </div>
+// Lines 84-93: Shows total count of all certifications
+<div className="grid gap-3 sm:grid-cols-2">
+  <div className="rounded-3xl bg-slate-900/90 p-5 ring-1 ring-white/10">
+    <p className="text-sm text-slate-400">Certificates indexed</p>
+    <p className="mt-3 text-3xl font-semibold text-slate-100">
+      {certifications.length}  {/* ✅ Displays total count (75+) */}
+    </p>
+  </div>
+  <div className="rounded-3xl bg-slate-900/90 p-5 ring-1 ring-white/10">
+    <p className="text-sm text-slate-400">Skills surfaces</p>
+    <p className="mt-3 text-3xl font-semibold text-slate-100">{skillOptions.length - 1}</p>
+  </div>
+</div>        </div>
 
         <div className="grid gap-4 sm:grid-cols-[1.5fr_1fr] xl:grid-cols-[2fr_1fr]">
           <div className="space-y-4">
