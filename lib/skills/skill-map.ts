@@ -223,8 +223,8 @@ normalized
 )
 return 'Programming & Automation';
 
-if (
-/network|routing|switching|tcp/ip|dns|dhcp|firewall|ipv6|infrastructure/.test(
+if ( 
+/network|routing|switching|tcp\/ip|dns|dhcp|firewall|ipv6|infrastructure/ .test(
 normalized
 )
 )
