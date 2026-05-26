@@ -1,6 +1,6 @@
 'use client';
 
-import type { CertificationEntry } from '@/data/certifications';
+import type { CertificationEntry } from '../../data/certifications';
 import { motion } from 'framer-motion';
 
 type CertificationCardProps = {

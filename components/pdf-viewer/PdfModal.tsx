@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { CertificationEntry } from '@/data/certifications';
+import type { CertificationEntry } from '../../data/certifications';
 
 type PdfModalProps = {
   open: boolean;

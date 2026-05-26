@@ -2,10 +2,10 @@
 
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import type { CertificationEntry } from '@/data/certifications';
-import { PdfModal } from '@/components/pdf-viewer/PdfModal';
-import { CertificationCard } from '@/components/certifications/CertificationCard';
-import { skillGroups, getSkillCategory } from '@/lib/skills/skill-map';
+import type { CertificationEntry } from '../../data/certifications';
+import { PdfModal } from '../pdf-viewer/PdfModal';
+import { CertificationCard } from './CertificationCard';
+import { skillGroups, getSkillCategory } from '../../lib/skills/skill-map';
 
 type CertificationDashboardProps = {
   certifications: CertificationEntry[];

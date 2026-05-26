@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function HomePage() {
   return (
@@ -25,12 +24,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/80 p-6 shadow-glow"
-            >
+            <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/80 p-6 shadow-glow">
               <div className="space-y-5">
                 <div className="rounded-3xl border border-cyan-400/10 bg-slate-950/90 p-5">
                   <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Credentials</p>
@@ -56,7 +50,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { CertificationDashboard } from '@/components/certifications/CertificationDashboard';
-import { makeCertificationEntry } from '@/data/certifications';
+import { CertificationDashboard } from '../../components/certifications/CertificationDashboard';
+import { makeCertificationEntry } from '../../data/certifications';
 
 export const metadata = {
   title: 'Certifications • Divya Tej Pendela',
