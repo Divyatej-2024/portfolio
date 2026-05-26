@@ -59,7 +59,7 @@ export default function HomePage() {
             <div className="space-y-5">
               <div className="flex items-center justify-center">
                 <div className="relative h-40 w-40 rounded-full border-4 border-white/6 overflow-hidden shadow-glow">
-                  <Image src="/images/profile.png" alt="Divya Tej Pendela" fill sizes="(max-width: 768px) 120px, 160px" className="object-cover" />
+                  <Image src="/images/pendela Divya Tej.png" alt="Divya Tej Pendela" fill sizes="(max-width: 768px) 120px, 160px" className="object-cover" />
                 </div>
               </div>
               <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Resume summary</p>
