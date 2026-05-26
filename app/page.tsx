@@ -70,7 +70,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-900/80 p-6">
               <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Contact</p>
-              <p className="text-lg font-semibold text-slate-100">divya.tej.pendela@example.com</p>
+              <p className="text-lg font-semibold text-slate-100">pdivyatej2003@gmail.com</p>
               <p className="text-lg font-semibold text-slate-100">+44 7776 751102</p>
               <p className="text-sm text-slate-400">Available for graduate roles in cybersecurity and FinTech engineering from September 2026.</p>
             </div>
