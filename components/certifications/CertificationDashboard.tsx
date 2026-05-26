@@ -170,8 +170,8 @@ export function CertificationDashboard({ certifications }: CertificationDashboar
           </p>
         </div>
 
-        <div className="grid gap-4 xl:grid-cols-[1fr_minmax(300px,0.5fr)]">
-          <div className="grid gap-4">
+        <div className="grid gap-4 xl:grid-cols-[1fr_minmax(300px,0.5fr)] auto-rows-max">
+  <div className="grid gap-4 auto-rows-max">
 // Lines 173-186: Displays ALL filtered certifications (no limit)
 {filteredCertifications.length ? (
   filteredCertifications.map((certificate) => (  // ✅ Maps ALL certs
