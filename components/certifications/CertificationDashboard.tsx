@@ -170,20 +170,20 @@ export function CertificationDashboard({ certifications }: CertificationDashboar
 
         <div className="grid gap-4 xl:grid-cols-[1fr_minmax(300px,0.5fr)]">
           <div className="grid gap-4">
-            {filteredCertifications.length ? (
-              filteredCertifications.map((certificate) => (
-                <CertificationCard
-                  key={certificate.id}
-                  certificate={certificate}
-                  onPreview={setSelectedCertificate}
-                />
-              ))
-            ) : (
-              <div className="rounded-3xl border border-dashed border-slate-600 bg-slate-900/70 p-8 text-center text-slate-400">
-                No certifications match the current search or filters. Adjust your query to see more credentials.
-              </div>
-            )}
-          </div>
+// Lines 173-186: Displays ALL filtered certifications (no limit)
+{filteredCertifications.length ? (
+  filteredCertifications.map((certificate) => (  // ✅ Maps ALL certs
+    <CertificationCard
+      key={certificate.id}
+      certificate={certificate}
+      onPreview={setSelectedCertificate}
+    />
+  ))
+) : (
+  <div className="rounded-3xl border border-dashed border-slate-600 bg-slate-900/70 p-8 text-center text-slate-400">
+    No certifications match the current search or filters.
+  </div>
+)}          </div>
 
           <aside className="space-y-4 rounded-3xl border border-white/10 bg-slate-900/80 p-6">
             <div className="space-y-3">
