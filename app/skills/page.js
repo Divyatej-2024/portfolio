@@ -8,17 +8,17 @@ export const metadata = {
 export default function SkillsPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-8 lg:px-12">
-      <header className="mb-12 max-w-2xl">
-        <p className="text-sm uppercase tracking-[0.24em] text-cyan-300">Skills in practice</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Tools & focus areas</h1>
-        <p className="mt-4 text-lg leading-8 text-slate-400">A snapshot of technologies used across my projects and the security tools I’m currently learning.</p>
+      <header className="mb-12 max-w-3xl border-b border-[#dfe4df] pb-8">
+        <p className="section-kicker">Technical profile</p>
+        <h1 className="display-face mt-3 text-5xl font-medium tracking-tight text-[#17231e] sm:text-6xl">Skills & tools</h1>
+        <p className="mt-5 text-base leading-7 text-[#59665f]">A snapshot of technologies used across my projects and the security tools I’m currently learning.</p>
       </header>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {skillsData.map((group) => (
-          <article key={group.category} className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
-            <h2 className="text-lg font-semibold text-cyan-200">{group.category}</h2>
+          <article key={group.category} className="rounded-md border border-[#dfe4df] bg-white p-6">
+            <h2 className="text-base font-semibold text-[#17231e]">{group.category}</h2>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {group.items.map((skill) => <li key={skill} className="rounded-full border border-white/10 px-3 py-1.5 text-sm text-slate-300">{skill}</li>)}
+              {group.items.map((skill) => <li key={skill} className="tag">{skill}</li>)}
             </ul>
           </article>
         ))}
