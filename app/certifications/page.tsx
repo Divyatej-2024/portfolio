@@ -24,10 +24,10 @@ export default function CertificationsPage() {
   });
 
   return (
-    <main className="relative py-12 px-4 sm:px-8 lg:px-12">
+    <section className="relative px-5 py-12 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <CertificationDashboard certifications={certifications} />
       </div>
-    </main>
+    </section>
   );
 }

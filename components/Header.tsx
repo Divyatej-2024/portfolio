@@ -65,6 +65,13 @@ export default function Header() {
           Contact
         </Link>
       </div>
+      <nav aria-label="Mobile navigation" className="flex gap-6 overflow-x-auto border-t border-[#e5e8e5] px-5 py-3 md:hidden">
+        {navLinks.map((link) => (
+          <button key={link.href} onClick={() => handleNavClick(link.href)} className="shrink-0 text-xs font-medium text-[#536158] hover:text-[#285b47]">
+            {link.label}
+          </button>
+        ))}
+      </nav>
     </header>
   );
 }
