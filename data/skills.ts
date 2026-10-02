@@ -2,27 +2,23 @@ import { Skill } from '@/lib/types';
 
 export const skillsData: Skill[] = [
   {
-    category: 'Cybersecurity',
-    items: ['Cloud Security', 'Network Security', 'Threat Detection', 'Incident Response', 'Penetration Testing', 'SIEM Operations']
+    category: 'Security focus',
+    items: ['SOC workflows', 'Threat detection', 'Phishing analysis', 'Security awareness', 'Network defence', 'Incident response'],
   },
   {
-    category: 'Programming & Scripting',
-    items: ['Python', 'JavaScript/TypeScript', 'Bash', 'SQL', 'HTML/CSS']
+    category: 'SIEM learning',
+    items: ['Splunk (currently learning)', 'Microsoft Sentinel (currently learning)', 'Log analysis', 'Alert investigation'],
   },
   {
-    category: 'Cloud & Infrastructure',
-    items: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Infrastructure as Code', 'Network Architecture']
+    category: 'Programming',
+    items: ['Python', 'JavaScript', 'TypeScript', 'Go', 'HTML & CSS'],
   },
   {
-    category: 'Security Tools & Platforms',
-    items: ['Wazuh', 'Splunk', 'Wireshark', 'Nessus', 'Burp Suite', 'Metasploit', 'Snort']
+    category: 'Frameworks & services',
+    items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI'],
   },
   {
-    category: 'Web Development',
-    items: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Full-Stack Development', 'API Development']
+    category: 'Data & infrastructure',
+    items: ['PostgreSQL', 'MongoDB', 'Docker', 'Cisco Packet Tracer', 'IPsec VPN'],
   },
-  {
-    category: 'Data Science & ML',
-    items: ['Machine Learning', 'Python Data Analysis', 'Random Forest', 'SVM', 'Email Security Detection']
-  }
 ];

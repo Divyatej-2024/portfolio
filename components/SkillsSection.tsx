@@ -27,10 +27,10 @@ export default function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 space-y-4"
         >
-          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Technical Expertise</p>
-          <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">Skills & Expertise</h2>
+          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Skills in practice</p>
+          <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">Tools & focus areas</h2>
           <p className="max-w-2xl text-lg text-slate-400">
-            Comprehensive skill set spanning cybersecurity, cloud infrastructure, programming, and advanced analytics.
+            Technologies drawn from my public projects and current learning, grouped by how I use them.
           </p>
         </motion.div>
 

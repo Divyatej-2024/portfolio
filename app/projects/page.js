@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           <article key={project.id} className="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-6 transition hover:border-cyan-300/30">
             <div className="flex items-start justify-between gap-3">
               <h2 className="text-lg font-semibold text-white">{project.title}</h2>
-              {project.status && <span className="shrink-0 rounded-full border border-white/10 bg-slate-950 px-2.5 py-1 text-[11px] capitalize text-slate-300">{project.status === 'active' ? 'Built' : project.status}</span>}
+              {project.status && <span className="shrink-0 rounded-full border border-white/10 bg-slate-950 px-2.5 py-1 text-[11px] capitalize text-slate-300">{project.status}</span>}
             </div>
             <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">{project.description}</p>
             <div className="mt-5 flex flex-wrap gap-2">
