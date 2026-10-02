@@ -58,7 +58,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Availability</p>
-                  <p className="mt-2 text-lg text-slate-300">Available for graduate roles from September 2026</p>
+                  <p className="mt-2 text-lg text-slate-300">Actively seeking Cyber Security Analyst and SOC Analyst roles in the UK</p>
                 </div>
               </div>
             </div>

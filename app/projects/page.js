@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       <header className="mb-12 max-w-2xl">
         <p className="text-sm uppercase tracking-[0.24em] text-cyan-300">Selected work</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Projects & experiments</h1>
-        <p className="mt-4 text-lg leading-8 text-slate-400">A collection of security labs, software projects, and research. Work in progress is labelled so you can see what is being built.</p>
+        <p className="mt-4 text-lg leading-8 text-slate-400">{projects.length} selected projects from my public GitHub, led by security operations, phishing awareness, threat detection, and network defence. Work in progress is labelled clearly.</p>
       </header>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (

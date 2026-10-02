@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { projects } from '@/data/projects';
-import { useState } from 'react';
-import DemoRequestModal from './DemoRequestModal';
 
 const statusColors = {
   active: 'bg-cyan-500/20 text-cyan-400 border-cyan-400/20',
@@ -13,14 +11,6 @@ const statusColors = {
 };
 
 export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleDemoRequest = (projectId: string) => {
-    setSelectedProject(projectId);
-    setIsModalOpen(true);
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,7 +37,7 @@ export default function ProjectsSection() {
           <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Portfolio</p>
           <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">Featured Projects</h2>
           <p className="max-w-2xl text-lg text-slate-400">
-            A selection of cybersecurity, software development, and research projects showcasing hands-on expertise.
+            Selected builds from my public GitHub, centred on SOC workflows, phishing awareness, threat detection, and practical network security.
           </p>
         </motion.div>
 
@@ -118,12 +108,6 @@ export default function ProjectsSection() {
                         Repository
                       </a>
                     )}
-                    <button
-                      onClick={() => handleDemoRequest(project.id)}
-                      className="flex-1 rounded-lg border border-white/10 px-3 py-2 text-center text-xs font-medium text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-400"
-                    >
-                      Request Demo
-                    </button>
                   </div>
                 </div>
               </div>
@@ -137,13 +121,6 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {selectedProject && (
-        <DemoRequestModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          projectTitle={projects.find((p) => p.id === selectedProject)?.title || ''}
-        />
-      )}
     </section>
   );
 }

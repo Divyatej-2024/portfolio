@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-lg font-semibold text-slate-100">Divya Tej Pendela</h3>
-            <p className="mt-2 text-sm text-slate-400">Cybersecurity Engineer • Security Researcher • Software Developer</p>
+            <p className="mt-2 text-sm text-slate-400">First Class Cyber Security Graduate • SOC Analyst Aspirant</p>
           </div>
 
           {/* Quick Links */}

@@ -41,7 +41,7 @@ export default function Header() {
           </div>
           <div className="hidden flex-col leading-tight sm:flex">
             <span className="font-semibold text-slate-100">Divya Tej</span>
-            <span className="text-xs text-slate-400">Cybersecurity • Software • ML</span>
+            <span className="text-xs text-slate-400">Cyber Security • SOC • Threat Detection</span>
           </div>
         </a>
 
