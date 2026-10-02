@@ -12,9 +12,9 @@ export default function HeroSection() {
           <h1 className="display-face mt-6 text-5xl font-medium leading-[1.02] tracking-[-0.04em] text-[#17231e] sm:text-6xl lg:text-[4.65rem]">
             Divya Tej<br className="hidden sm:block" /> Pendela
           </h1>
-          <p className="mt-5 text-lg font-medium text-[#285b47] sm:text-xl">SOC Analysis · Threat Detection · Phishing Analysis</p>
+          <p className="mt-5 text-lg font-medium text-[#285b47] sm:text-xl">Seeking Cyber Security Analyst / SOC Analyst roles · UK</p>
           <p className="body-copy mt-6 max-w-2xl">
-            First Class BSc (Hons) Cyber Security graduate from Teesside University. I build practical security projects and am seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK.
+            First Class BSc (Hons) Cyber Security graduate from Teesside University, looking for an entry-level role where I can contribute to security operations, threat detection, and phishing analysis.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="primary-button">View selected work <span aria-hidden="true">↗</span></a>
