@@ -5,15 +5,15 @@ import Footer from "../components/Footer";
 
 
 export const metadata = {
-  title: "Divya Tej Pendela – Cybersecurity Portfolio",
-  description: "Cybersecurity student portfolio website",
+  title: "Divya Tej Pendela | Cybersecurity Portfolio",
+  description: "Projects, skills, and learning in cybersecurity, cloud infrastructure, and software engineering.",
 };
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-slate-900 text-slate-100">
+      <body className="bg-slate-950 text-slate-100">
         <Header />
         <main className="min-h-[60vh]">
           {children}

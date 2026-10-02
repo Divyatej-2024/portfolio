@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   const highlights = [
-    { label: 'Experience', value: 'Graduate' },
-    { label: 'Focus', value: 'Cybersecurity' },
-    { label: 'Certifications', value: '72+' },
-    { label: 'Projects', value: '15+' }
+    { label: 'Discipline', value: 'Cybersecurity' },
+    { label: 'Interests', value: 'Cloud & SecOps' },
+    { label: 'Approach', value: 'Hands-on learning' },
+    { label: 'Toolkit', value: 'Code · Networks · Cloud' }
   ];
 
   return (
@@ -25,12 +25,12 @@ export default function AboutSection() {
             <div className="space-y-4">
               <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">About Me</p>
               <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">
-                Certified Cybersecurity Engineer & Researcher
+                Security-minded engineer, always learning
               </h2>
             </div>
 
             <p className="text-lg text-slate-400">
-              Graduate cybersecurity professional with comprehensive expertise in enterprise security operations, cloud security, network architecture, and machine learning applications for threat detection.
+              I’m a cybersecurity graduate who enjoys turning what I learn into working projects. My interests span security operations, cloud infrastructure, network defence, and Python-led automation.
             </p>
 
             <div className="space-y-4">
@@ -62,7 +62,7 @@ export default function AboutSection() {
             <div className="space-y-4 rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-6 backdrop-blur-sm">
               <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Professional Goal</h3>
               <p className="text-slate-400">
-                Seeking graduate roles in cybersecurity, cloud security, and FinTech engineering from September 2026. Focused on delivering enterprise-grade security solutions and driving digital transformation through technical excellence.
+                I’m interested in early-career opportunities where I can contribute, keep building practical skills, and work alongside teams solving real security problems.
               </p>
             </div>
           </div>

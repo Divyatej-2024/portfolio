@@ -58,7 +58,7 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
+          {projects.slice(0, 6).map((project) => (
             <motion.div key={project.id} variants={itemVariants}>
               <div className="group h-full rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/30 hover:bg-gradient-to-br hover:from-slate-950/95 hover:to-slate-900/80 hover:shadow-glow">
                 <div className="space-y-4">
@@ -130,6 +130,11 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </motion.div>
+        <div className="mt-10 flex justify-center">
+          <a href="/projects" className="rounded-xl border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-200">
+            View all projects <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
 
       {selectedProject && (

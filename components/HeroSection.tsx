@@ -1,152 +1,56 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 export default function HeroSection() {
-  const handleScroll = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 py-20 sm:px-8 lg:px-12">
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_0.9fr]">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6"
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm uppercase tracking-[0.28em] text-cyan-300/80"
-            >
-              Enterprise Cybersecurity Profile
-            </motion.p>
+    <section id="home" className="relative isolate overflow-hidden px-4 pb-20 pt-16 sm:px-8 sm:pt-24 lg:px-12 lg:pb-28">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-0 -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-500/10 blur-3xl" />
+      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.2fr_0.8fr]">
+        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-7">
+          <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan-200">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" /> Cybersecurity · Cloud · Software
+          </p>
+          <div className="space-y-5">
+            <p className="text-sm font-medium tracking-wide text-slate-400">Hello, I’m Divya Tej Pendela</p>
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Building a safer <span className="text-cyan-300">digital world.</span>
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              Cybersecurity graduate focused on practical security engineering, cloud infrastructure, and tools that make complex systems easier to trust.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href="#projects" className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-300">
+              Explore my work <span aria-hidden="true">↗</span>
+            </a>
+            <a href="mailto:pdivyatej2003@gmail.com" className="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-3 font-semibold text-slate-100 hover:border-cyan-300/50 hover:text-cyan-200">
+              Get in touch
+            </a>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-slate-400">
+            <a href="https://github.com/Divyatej-2024" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-200">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-200">LinkedIn ↗</a>
+            <a href="#certifications" className="hover:text-cyan-200">Credentials ↓</a>
+          </div>
+        </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="max-w-3xl text-5xl font-semibold leading-tight text-slate-100 md:text-6xl lg:text-7xl"
-            >
-              Divya Tej Pendela — Certified Cybersecurity Engineer & Security Researcher.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="max-w-2xl text-lg text-slate-400 sm:text-xl"
-            >
-              Modern portfolio designed for recruiters: interactive certifications, verified credentials, and skill-driven technical presentation for high-impact roles in cybersecurity and software engineering.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col gap-4 sm:flex-row sm:items-center"
-            >
-              <button
-                onClick={() => handleScroll('#projects')}
-                className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
-              >
-                Explore Work
-              </button>
-              <button
-                onClick={() => handleScroll('#contact')}
-                className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-slate-800/50 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-400/40 hover:text-cyan-200"
-              >
-                Get in Touch
-              </button>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Stats */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/80 p-6 shadow-glow"
-          >
-            <div className="space-y-5">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="rounded-[24px] border border-cyan-400/10 bg-slate-950/90 p-6"
-              >
-                <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Credentials</p>
-                <p className="mt-4 text-4xl font-bold text-cyan-400">72+</p>
-                <p className="mt-2 text-sm text-slate-400">Verified certifications across cloud, security, and software development.</p>
-              </motion.div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  className="rounded-[20px] border border-white/10 bg-slate-950/80 p-5 backdrop-blur-sm"
-                >
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Technical Strengths</p>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                    <li>• Cloud Security & Identity</li>
-                    <li>• Network Architecture</li>
-                    <li>• Python Automation</li>
-                  </ul>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="rounded-[20px] border border-white/10 bg-slate-950/80 p-5 backdrop-blur-sm"
-                >
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Recruiter Signal</p>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                    <li>• PDF-based evidence</li>
-                    <li>• Skills-first approach</li>
-                    <li>• Enterprise design</li>
-                  </ul>
-                </motion.div>
-              </div>
+        <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.65, delay: 0.12 }} className="relative mx-auto w-full max-w-md">
+          <div className="absolute -inset-3 rounded-[2rem] border border-cyan-300/15" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.7rem] border border-white/10 bg-slate-900 shadow-2xl shadow-cyan-950/40">
+            <Image src="/images/profile.png" alt="Portrait of Divya Tej Pendela" fill priority sizes="(max-width: 768px) 90vw, 420px" className="object-cover" />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-transparent p-6 pt-24">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-cyan-200">Curious by nature</p>
+              <p className="mt-2 text-xl font-semibold text-white">Security through thoughtful engineering.</p>
             </div>
-          </motion.div>
-        </div>
+          </div>
+          <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-white/10 bg-slate-900/95 px-5 py-4 shadow-xl sm:block">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Based in</p>
+            <p className="mt-1 font-semibold text-slate-100">United Kingdom</p>
+          </div>
+        </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <button
-          onClick={() => handleScroll('#about')}
-          className="flex flex-col items-center gap-2 text-slate-400 transition hover:text-slate-300"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <motion.svg
-            animate={{ y: [0, 4, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </motion.svg>
-        </button>
-      </motion.div>
     </section>
   );
 }
