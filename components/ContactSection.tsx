@@ -5,155 +5,54 @@ import { motion } from 'framer-motion';
 export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-    const fields = new FormData(form);
+    const fields = new FormData(e.currentTarget as HTMLFormElement);
     const subject = String(fields.get('subject') || 'Portfolio enquiry');
     const body = `Name: ${fields.get('name')}\nEmail: ${fields.get('email')}\n\n${fields.get('message')}`;
     window.location.href = `mailto:pdivyatej2003@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
-    <section id="contact" className="scroll-mt-20 px-4 py-16 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 space-y-4"
-        >
-          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Get in Touch</p>
-          <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">Let's Connect</h2>
-          <p className="max-w-2xl text-lg text-slate-400">
-            Open to discussing cybersecurity, cloud architecture, software development, or research collaboration opportunities.
-          </p>
+    <section id="contact" className="scroll-mt-20 bg-[#203b30] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-12">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
+        <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .3 }}>
+          <p className="text-xs font-bold uppercase tracking-[0.17em] text-[#bfd0c4]">Contact</p>
+          <h2 className="display-face mt-4 text-4xl font-medium tracking-tight sm:text-5xl">Let’s talk about the work.</h2>
+          <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#d5ded8]">I’m seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK. For opportunities, questions about my projects, or professional connections, please get in touch.</p>
+          <div className="mt-9 space-y-5 border-t border-white/20 pt-6 text-sm">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#bfd0c4]">Email</p>
+              <a href="mailto:pdivyatej2003@gmail.com" className="mt-1 inline-block text-white underline decoration-white/40 hover:decoration-white">pdivyatej2003@gmail.com</a>
+            </div>
+            <div className="flex gap-6">
+              <a href="https://github.com/Divyatej-2024" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">LinkedIn ↗</a>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
-            <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-8 backdrop-blur-sm">
-              <h3 className="mb-6 text-xl font-semibold text-slate-100">Contact Information</h3>
-              <div className="space-y-6">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Email</p>
-                  <a
-                    href="mailto:pdivyatej2003@gmail.com"
-                    className="mt-2 text-lg text-cyan-400 transition hover:text-cyan-300"
-                  >
-                    pdivyatej2003@gmail.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Phone</p>
-                  <a href="tel:+447776751102" className="mt-2 text-lg text-cyan-400 transition hover:text-cyan-300">
-                    +44 7776 751102
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Availability</p>
-                  <p className="mt-2 text-lg text-slate-300">Actively seeking Cyber Security Analyst and SOC Analyst roles in the UK</p>
-                </div>
-              </div>
+        <form onSubmit={handleSubmit} className="rounded-md bg-white p-6 text-[#17231e] sm:p-8">
+          <h3 className="text-xl font-semibold">Send a message</h3>
+          <p className="mt-2 text-sm leading-6 text-[#647168]">This will open a new email draft in your mail app.</p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            <div>
+              <label htmlFor="contact-name" className="text-sm font-medium">Name</label>
+              <input id="contact-name" name="name" type="text" required className="mt-2 w-full rounded border border-[#cfd8d1] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#285b47] focus:ring-2 focus:ring-[#285b47]/10" placeholder="Your name" />
             </div>
-
-            {/* Social Links */}
-            <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-8 backdrop-blur-sm">
-              <h3 className="mb-6 text-lg font-semibold text-slate-100">Connect</h3>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://github.com/Divyatej-2024"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/10 px-4 py-3 text-sm font-medium text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-400"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/10 px-4 py-3 text-sm font-medium text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-400"
-                >
-                  LinkedIn
-                </a>
-              </div>
+            <div>
+              <label htmlFor="contact-email" className="text-sm font-medium">Email</label>
+              <input id="contact-email" name="email" type="email" required className="mt-2 w-full rounded border border-[#cfd8d1] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#285b47] focus:ring-2 focus:ring-[#285b47]/10" placeholder="you@example.com" />
             </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-8 backdrop-blur-sm"
-          >
-            <h3 className="mb-6 text-xl font-semibold text-slate-100">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="contact-name" className="text-sm font-medium text-slate-300">Name</label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  required
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/50 px-4 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contact-email" className="text-sm font-medium text-slate-300">Email</label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  required
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/50 px-4 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contact-subject" className="text-sm font-medium text-slate-300">Subject</label>
-                <input
-                  id="contact-subject"
-                  name="subject"
-                  type="text"
-                  required
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/50 px-4 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
-                  placeholder="Project inquiry or collaboration"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="contact-message" className="text-sm font-medium text-slate-300">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/50 px-4 py-2.5 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 resize-none"
-                  placeholder="Tell me about your interest or opportunity..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-cyan-500 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
-              >
-                Open email draft
-              </button>
-            </form>
-          </motion.div>
-        </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-subject" className="text-sm font-medium">Subject</label>
+              <input id="contact-subject" name="subject" type="text" required className="mt-2 w-full rounded border border-[#cfd8d1] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#285b47] focus:ring-2 focus:ring-[#285b47]/10" placeholder="Role or opportunity" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-message" className="text-sm font-medium">Message</label>
+              <textarea id="contact-message" name="message" required rows={4} className="mt-2 w-full resize-y rounded border border-[#cfd8d1] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#285b47] focus:ring-2 focus:ring-[#285b47]/10" placeholder="How can I help?" />
+            </div>
+          </div>
+          <button type="submit" className="primary-button mt-6">Open email draft <span aria-hidden="true">→</span></button>
+        </form>
       </div>
     </section>
   );

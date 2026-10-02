@@ -32,27 +32,25 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? 'border-b border-white/10 bg-slate-950/80 backdrop-blur-md' : 'border-b border-white/5 bg-transparent'
-      }`}
+      className={`sticky top-0 z-50 w-full bg-[#f7f7f4]/95 transition-all duration-300 ${scrolled ? 'border-b border-[#dfe4df]' : 'border-b border-transparent'}`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-8">
         <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }} className="flex items-center gap-3 transition hover:opacity-80">
-          <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-bold text-slate-900">
-            DT
+          <div className="flex h-9 w-9 items-center justify-center border border-[#9bac9f] font-serif text-sm font-semibold text-[#285b47]">
+            DP
           </div>
-          <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-semibold text-slate-100">Divya Tej</span>
-            <span className="text-xs text-slate-400">Cyber Security • SOC • Threat Detection</span>
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-semibold tracking-tight text-[#17231e]">Divya Tej Pendela</span>
+            <span className="mt-1 hidden text-[11px] text-[#647168] sm:block">Cyber Security · SOC Analysis</span>
           </div>
         </a>
 
-        <nav className="hidden gap-8 md:flex">
+        <nav aria-label="Main navigation" className="hidden gap-7 md:flex">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-              className="text-sm font-medium text-slate-300 transition hover:text-cyan-400"
+              className="text-[13px] font-medium text-[#4f5d55] hover:text-[#285b47]"
             >
               {link.label}
             </button>
@@ -62,7 +60,7 @@ export default function Header() {
         <Link
           href="#contact"
           onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
-          className="rounded-lg bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-400 transition hover:bg-cyan-500/20"
+          className="rounded border border-[#bdc9c0] px-3.5 py-2 text-[13px] font-semibold text-[#285b47] hover:border-[#285b47]"
         >
           Contact
         </Link>

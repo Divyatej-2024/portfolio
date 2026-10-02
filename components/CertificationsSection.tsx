@@ -1,96 +1,28 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { certificationsData } from '@/data/certifications';
 
 export default function CertificationsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.06,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 }
-    }
-  };
-
   return (
-    <section
-      id="certifications"
-      className="scroll-mt-20 px-4 py-16 sm:px-8 lg:px-12"
-    >
+    <section id="certifications" className="scroll-mt-20 px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 space-y-4"
-        >
-          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">
-            Credentials
-          </p>
-
-          <h2 className="text-4xl font-semibold text-slate-100 md:text-5xl">
-            Certifications & Achievements
-          </h2>
-
-          <p className="max-w-2xl text-lg text-slate-400">
-            Professional certifications and credentials demonstrating expertise
-            across cybersecurity, cloud, and software development.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
-        >
-          {certificationsData.map((cert) => (
-            <motion.div key={cert.id} variants={itemVariants}>
-              <div className="group h-full rounded-[20px] border border-white/10 bg-gradient-to-br from-slate-950/80 to-slate-900/60 p-5 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow">
-                <div className="space-y-3">
-                  <div>
-                    <h3 className="text-base font-semibold text-slate-100 group-hover:text-cyan-300">
-                      {cert.title}
-                    </h3>
-
-                    <p className="mt-1 text-sm text-cyan-400/80">
-                      {cert.provider}
-                    </p>
-                  </div>
-
-                  <p className="text-xs text-slate-500">
-                    {cert.date}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {cert.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2 py-1 text-[10px] uppercase tracking-wide text-cyan-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        <header className="mb-10 flex flex-col justify-between gap-5 border-b border-[#dfe4df] pb-7 sm:flex-row sm:items-end">
+          <div>
+            <p className="section-kicker">Professional development</p>
+            <h2 className="section-heading mt-3">Credentials & training</h2>
+          </div>
+          <p className="max-w-lg text-[15px] leading-7 text-[#59665f]">Selected certificates and job simulations, alongside my First Class degree in Cyber Security.</p>
+        </header>
+        <div className="grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
+          {certificationsData.slice(0, 6).map((cert) => (
+            <article key={cert.id} className="border-b border-[#dfe4df] py-5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#6a766f]">{cert.provider} <span className="px-1 text-[#a7b0aa]">·</span> {cert.date}</p>
+              <h3 className="mt-2 text-base font-semibold leading-snug text-[#17231e]">{cert.title}</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {cert.tags.slice(0, 2).map((tag) => <span key={tag} className="tag">{tag}</span>)}
               </div>
-            </motion.div>
+            </article>
           ))}
-        </motion.div>
+        </div>
+        <a href="/certifications" className="text-link mt-8 inline-block text-sm">Browse all credentials <span aria-hidden="true">→</span></a>
       </div>
     </section>
   );
