@@ -4,8 +4,8 @@ import { CertificationDashboard } from '../../components/certifications/Certific
 import { makeCertificationEntry } from '../../data/certifications';
 
 export const metadata = {
-  title: 'Credentials & learning • Divya Tej Pendela',
-  description: 'Forage job simulations, Microsoft Learn achievements, and course certificates.',
+  title: 'Certificates & badges • Divya Tej Pendela',
+  description: 'Course and job simulation certificates, shown separately from Microsoft Learn achievement badges.',
 };
 
 export default function CertificationsPage() {

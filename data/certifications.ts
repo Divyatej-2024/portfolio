@@ -1,6 +1,7 @@
 import certificationIndex from './certification-content.json';
 
 export type CertificationEntry = {
+  kind: 'certificate' | 'badge';
   id: string;
   title: string;
   provider: string;
@@ -26,6 +27,7 @@ export const makeCertificationEntry = (fileName: string): CertificationEntry => 
 
   // Do not turn opaque export filenames or file timestamps into misleading credentials.
   return {
+    kind: 'certificate',
     id: fileName,
     fileName,
     title: 'Credential details not indexed',
@@ -43,3 +45,6 @@ export const CATEGORY_OPTIONS = [
   'All',
   ...new Set(certificationsData.map((certificate) => certificate.category)),
 ];
+
+export const certificates = certificationsData.filter((entry) => entry.kind === 'certificate');
+export const badges = certificationsData.filter((entry) => entry.kind === 'badge');

@@ -24,7 +24,7 @@ export default function HeroSection() {
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#dfe4df] pt-5 text-sm">
             <a href="https://github.com/Divyatej-2024" target="_blank" rel="noopener noreferrer" className="text-link">GitHub ↗</a>
             <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="text-link">LinkedIn ↗</a>
-            <a href="#certifications" className="text-link">Certifications ↓</a>
+            <a href="#certifications" className="text-link">Certificates & badges ↓</a>
           </div>
         </motion.div>
 
