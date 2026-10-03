@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: 'cyberhire-ai',
     title: 'CyberHire AI',
-    description: 'An in-progress, candidate-side job search platform concept for cybersecurity applicants, covering job discovery, application tracking, CV support, interview practice, and skills planning. It is designed to help job seekers manage their own search, not to recruit or hire.',
+    description: 'An in-progress, candidate-side job search platform for cybersecurity applicants, covering job discovery, application tracking, CV support, interview practice, and skills planning.',
     tags: ['Cybersecurity Careers', 'Next.js', 'TypeScript', 'PostgreSQL', 'AI'],
     repo: 'https://github.com/Divyatej-2024/cyberhire-ai',
     status: 'development',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
   {
     id: 'Tracker',
     title: 'Job Application Tracker',
-    description: 'A private workspace for managing my job search, with application tracking, CV tools, interview preparation, recruiter contacts, analytics, and authentication. The repository includes deployment and security setup notes.',
+    description: 'A candidate-side workspace for managing a job search, with application tracking, CV tools, interview preparation, recruiter contacts, analytics, and authentication. The repository includes deployment and security setup notes.',
     tags: ['JavaScript', 'Job Search', 'Application Tracking', 'Security'],
     repo: 'https://github.com/Divyatej-2024/Tracker',
     status: 'active',

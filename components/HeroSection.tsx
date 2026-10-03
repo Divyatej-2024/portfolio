@@ -1,13 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function HeroSection() {
+  const prefersReducedMotion = useReducedMotion();
   return (
     <section id="home" className="scroll-mt-24 px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-20 lg:px-12">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_420px] lg:gap-20">
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-3xl">
+        <motion.div initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: prefersReducedMotion ? 0 : 0.35 }} className="max-w-3xl">
           <p className="section-kicker">Cyber Security · First Class Graduate</p>
           <h1 className="display-face mt-6 text-5xl font-medium leading-[1.02] tracking-[-0.04em] text-[#17231e] sm:text-6xl lg:text-[4.65rem]">
             Divya Tej<br className="hidden sm:block" /> Pendela
@@ -27,7 +28,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.figure initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 0.08 }} className="mx-auto w-full max-w-[420px]">
+        <motion.figure initial={prefersReducedMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: prefersReducedMotion ? 0 : 0.45, delay: prefersReducedMotion ? 0 : 0.08 }} className="mx-auto w-full max-w-[420px]">
           <div className="relative aspect-[4/4.35] overflow-hidden rounded-sm bg-[#e9ece8]">
             <Image src="/images/profile.png" alt="Portrait of Divya Tej Pendela" fill priority sizes="(max-width: 768px) 90vw, 420px" className="object-cover" />
           </div>

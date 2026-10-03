@@ -4,24 +4,21 @@ import { CertificationDashboard } from '../../components/certifications/Certific
 import { makeCertificationEntry } from '../../data/certifications';
 
 export const metadata = {
-  title: 'Certifications • Divya Tej Pendela',
-  description: 'Interactive cybersecurity certification dashboard showcasing all certificates and skills.',
+  title: 'Credentials & learning • Divya Tej Pendela',
+  description: 'Forage job simulations, Microsoft Learn achievements, and course certificates.',
 };
 
-// Lines 12-21: This reads ALL PDF files from public/certifications folder
 export default function CertificationsPage() {
   const dir = path.join(process.cwd(), 'public', 'certifications');
   const files = fs.existsSync(dir)
     ? fs.readdirSync(dir)
-        .filter((file) => file.toLowerCase().endsWith('.pdf'))  // ✅ Loads ALL PDFs
+        .filter((file) => file.toLowerCase().endsWith('.pdf') && !/transcript/i.test(file))
         .sort()
     : [];
 
   const certifications = files.map((fileName) => {
-    const stat = fs.statSync(path.join(dir, fileName));
-    const date = new Date(stat.mtime).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
-    return makeCertificationEntry(fileName, date);  // ✅ Creates entry for EACH file
-  });
+    return makeCertificationEntry(fileName);
+  }).sort((a, b) => b.dateISO.localeCompare(a.dateISO));
 
   return (
     <section className="relative px-5 py-12 sm:px-8 lg:px-12">

@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function AboutSection() {
+  const prefersReducedMotion = useReducedMotion();
   const highlights = [
     { label: 'Degree', value: 'BSc (Hons) Cyber Security' },
     { label: 'Result', value: 'First Class' },
@@ -12,7 +13,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="scroll-mt-20 border-y border-[#e2e6e2] bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
-      <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }} className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-24">
+      <motion.div initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: prefersReducedMotion ? 0 : 0.3 }} className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-24">
         <div>
           <p className="section-kicker">Profile</p>
           <h2 className="section-heading mt-4 max-w-2xl">Security-minded, practical, and ready to contribute.</h2>

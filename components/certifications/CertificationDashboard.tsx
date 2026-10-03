@@ -14,29 +14,27 @@ export function CertificationDashboard({ certifications }: CertificationDashboar
   const [search, setSearch] = useState('');
   const [providerFilter, setProviderFilter] = useState('All');
   const [categoryFilter, setCategoryFilter] = useState('All');
-  const [skillFilter, setSkillFilter] = useState('All');
 
   const providers = useMemo(() => ['All', ...new Set(certifications.map((cert) => cert.provider))], [certifications]);
   const categories = useMemo(() => ['All', ...new Set(certifications.map((cert) => cert.category))], [certifications]);
-  const skillOptions = useMemo(() => ['All', ...new Set(certifications.flatMap((cert) => cert.skills))], [certifications]);
 
   const filteredCertifications = useMemo(() => {
     const query = search.trim().toLowerCase();
     return certifications.filter((cert) => {
-      const matchesSearch = !query || cert.title.toLowerCase().includes(query) || cert.provider.toLowerCase().includes(query) || cert.tags.some((tag) => tag.toLowerCase().includes(query)) || cert.skills.some((skill) => skill.toLowerCase().includes(query));
-      return matchesSearch && (providerFilter === 'All' || cert.provider === providerFilter) && (categoryFilter === 'All' || cert.category === categoryFilter) && (skillFilter === 'All' || cert.skills.includes(skillFilter));
+      const matchesSearch = !query || cert.title.toLowerCase().includes(query) || cert.provider.toLowerCase().includes(query) || cert.tags.some((tag) => tag.toLowerCase().includes(query));
+      return matchesSearch && (providerFilter === 'All' || cert.provider === providerFilter) && (categoryFilter === 'All' || cert.category === categoryFilter);
     });
-  }, [certifications, search, providerFilter, categoryFilter, skillFilter]);
+  }, [certifications, search, providerFilter, categoryFilter]);
 
   return (
     <div className="space-y-10">
       <header className="max-w-3xl border-b border-[#dfe4df] pb-8">
         <p className="section-kicker">Professional development</p>
-        <h1 className="display-face mt-3 text-5xl font-medium tracking-tight text-[#17231e] sm:text-6xl">Credentials & training</h1>
-        <p className="mt-5 text-base leading-7 text-[#59665f]">Certificates and job simulations, with original documents available to preview or download.</p>
+        <h1 className="display-face mt-3 text-5xl font-medium tracking-tight text-[#17231e] sm:text-6xl">Credentials & learning</h1>
+        <p className="mt-5 text-base leading-7 text-[#59665f]">Forage job simulations, Microsoft Learn achievements, and course certificates. The award dates and titles shown here come from the documents themselves.</p>
       </header>
 
-      <section aria-label="Filter credentials" className="grid gap-3 border-b border-[#dfe4df] pb-7 sm:grid-cols-2 lg:grid-cols-4">
+      <section aria-label="Filter credentials" className="grid gap-3 border-b border-[#dfe4df] pb-7 sm:grid-cols-2 lg:grid-cols-3">
         <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search credentials" aria-label="Search credentials" className={selectClass} />
         <select aria-label="Filter by provider" value={providerFilter} onChange={(event) => setProviderFilter(event.target.value)} className={selectClass}>
           {providers.map((provider) => <option key={provider} value={provider}>{provider === 'All' ? 'All providers' : provider}</option>)}
@@ -44,14 +42,11 @@ export function CertificationDashboard({ certifications }: CertificationDashboar
         <select aria-label="Filter by category" value={categoryFilter} onChange={(event) => setCategoryFilter(event.target.value)} className={selectClass}>
           {categories.map((category) => <option key={category} value={category}>{category === 'All' ? 'All categories' : category}</option>)}
         </select>
-        <select aria-label="Filter by skill" value={skillFilter} onChange={(event) => setSkillFilter(event.target.value)} className={selectClass}>
-          {skillOptions.map((skill) => <option key={skill} value={skill}>{skill === 'All' ? 'All skills' : skill}</option>)}
-        </select>
       </section>
 
       <div className="flex items-baseline justify-between gap-4">
-        <h2 className="text-xl font-semibold text-[#17231e]">Certificates & simulations</h2>
-        <p className="text-sm text-[#647168]">Showing {filteredCertifications.length} of {certifications.length}</p>
+        <h2 className="text-xl font-semibold text-[#17231e]">Certificates, simulations & learning achievements</h2>
+        <p aria-live="polite" className="text-sm text-[#647168]">Showing {filteredCertifications.length} of {certifications.length}</p>
       </div>
       {filteredCertifications.length ? (
         <div className="grid gap-4 lg:grid-cols-2">

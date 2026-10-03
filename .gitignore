@@ -3,6 +3,7 @@ node_modules/
 
 # Next.js build output
 .next/
+*.tsbuildinfo
 out/
 
 # Logs
@@ -34,3 +35,6 @@ Thumbs.db
 .idea/
 .vercel
 .env*
+
+# Personal records stay local and must never be deployed with the public site.
+/private-documents/

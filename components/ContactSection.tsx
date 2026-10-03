@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function ContactSection() {
+  const prefersReducedMotion = useReducedMotion();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const fields = new FormData(e.currentTarget as HTMLFormElement);
@@ -14,7 +15,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-20 bg-[#203b30] px-5 py-20 text-white sm:px-8 sm:py-24 lg:px-12">
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
-        <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .3 }}>
+        <motion.div initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: prefersReducedMotion ? 0 : .3 }}>
           <p className="text-xs font-bold uppercase tracking-[0.17em] text-[#bfd0c4]">Contact</p>
           <h2 className="display-face mt-4 text-4xl font-medium tracking-tight sm:text-5xl">Let’s talk about the work.</h2>
           <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#d5ded8]">I’m seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK. For opportunities, questions about my projects, or professional connections, please get in touch.</p>

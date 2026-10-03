@@ -45,7 +45,7 @@ export function ProjectDashboard({ projects }: ProjectDashboardProps) {
 
       <div className="flex items-baseline justify-between gap-4">
         <h2 className="text-xl font-semibold text-[#17231e]">Portfolio projects</h2>
-        <p className="text-sm text-[#647168]">Showing {filteredProjects.length} of {projects.length}</p>
+        <p aria-live="polite" className="text-sm text-[#647168]">Showing {filteredProjects.length} of {projects.length}</p>
       </div>
       {filteredProjects.length ? (
         <div className="grid gap-4 lg:grid-cols-2">

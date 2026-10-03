@@ -18,10 +18,6 @@ export function CertificationCard({ certificate, onPreview }: CertificationCardP
       </div>
       <h3 className="mt-3 text-lg font-semibold leading-snug text-[#17231e]">{certificate.title}</h3>
       {certificate.credentialId && <p className="mt-2 break-all text-xs text-[#647168]">Credential ID: {certificate.credentialId}</p>}
-      <div className="mt-4 flex flex-wrap gap-2">
-        {certificate.tags.slice(0, 3).map((tag) => <span key={tag} className="tag">{tag}</span>)}
-      </div>
-      {certificate.skills.length > 0 && <p className="mt-4 text-xs leading-5 text-[#647168]">{certificate.skills.slice(0, 4).join(' · ')}</p>}
       <div className="mt-auto flex gap-5 border-t border-[#e8ebe8] pt-4 text-sm">
         <button type="button" onClick={() => onPreview(certificate)} className="text-link">Preview PDF</button>
         <a href={pdfUrl} download className="text-link">Download</a>

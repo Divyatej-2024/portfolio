@@ -41,7 +41,7 @@ export function SkillsDashboard({ groups }: SkillsDashboardProps) {
 
       <div className="flex items-baseline justify-between gap-4">
         <h2 className="text-xl font-semibold text-[#17231e]">Skill areas</h2>
-        <p className="text-sm text-[#647168]">Showing {visibleSkillCount} of {totalSkillCount} skills</p>
+        <p aria-live="polite" className="text-sm text-[#647168]">Showing {visibleSkillCount} of {totalSkillCount} skills</p>
       </div>
 
       {filteredGroups.length ? (
