@@ -28,6 +28,15 @@ export const projects: Project[] = [
     status: 'active',
   },
   {
+    id: 'VulnX',
+    title: 'VulnX — Vulnerability Intelligence Dashboard',
+    description: 'A vulnerability-intelligence dashboard using NVD CVE data. Documented capabilities include CVE search and severity filtering, vulnerability detail lookup, summary counts, a FastAPI REST API, and NVD feed ingestion. The ML pipeline is experimental and is not required for the dashboard.',
+    tags: ['Vulnerability Intelligence', 'NVD', 'CVE', 'React', 'FastAPI', 'SQLite'],
+    repo: 'https://github.com/Divyatej-2024/vulnx',
+    live: 'https://vulnx-six.vercel.app/',
+    status: 'active',
+  },
+  {
     id: 'PipeSentinel',
     title: 'PipeSentinel SOC Dashboard',
     description: 'A security event monitoring and triage project. The README documents authenticated event ingestion, detection and risk scoring, PostgreSQL-backed alerts, analytics, and live dashboard updates.',
