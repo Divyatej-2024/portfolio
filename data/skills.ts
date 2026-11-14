@@ -2,23 +2,31 @@ import { Skill } from '@/lib/types';
 
 export const skillsData: Skill[] = [
   {
-    category: 'Security focus',
-    items: ['SOC workflows', 'Threat detection', 'Phishing analysis', 'Security awareness', 'Network defence', 'Incident response'],
+    category: 'IT support & workplace tools',
+    items: ['Windows and Linux fundamentals', 'Troubleshooting methodology', 'Microsoft Word', 'Microsoft Excel', 'Documentation', 'Data entry and record accuracy'],
   },
   {
-    category: 'SIEM learning',
-    items: ['Splunk (currently learning)', 'Microsoft Sentinel (currently learning)', 'Log analysis', 'Alert investigation'],
+    category: 'Networking',
+    items: ['TCP/IP', 'DNS and DHCP', 'LAN and VLAN concepts', 'OSI model', 'Routing and switching fundamentals', 'Cisco Packet Tracer'],
   },
   {
-    category: 'Programming',
-    items: ['Python', 'JavaScript', 'TypeScript', 'Go', 'HTML & CSS'],
+    category: 'Security operations & analysis',
+    items: ['Security monitoring concepts', 'Log and packet analysis', 'Wireshark', 'NetworkMiner', 'Nmap', 'Phishing analysis', 'Incident response fundamentals'],
   },
   {
-    category: 'Frameworks & services',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI'],
+    category: 'Security platforms — learning and lab exposure',
+    items: ['Splunk', 'Microsoft Sentinel', 'Nessus', 'OpenVAS', 'WPScan', 'Microsoft Defender concepts'],
   },
   {
-    category: 'Data & infrastructure',
-    items: ['PostgreSQL', 'MongoDB', 'Docker', 'Cisco Packet Tracer', 'IPsec VPN'],
+    category: 'Programming & scripting',
+    items: ['Python', 'JavaScript', 'TypeScript', 'HTML and CSS', 'SQL'],
+  },
+  {
+    category: 'Development & data',
+    items: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Docker'],
+  },
+  {
+    category: 'Cloud & infrastructure learning',
+    items: ['Azure fundamentals', 'Microsoft Entra concepts', 'Cisco Packet Tracer', 'Git and GitHub'],
   },
 ];
