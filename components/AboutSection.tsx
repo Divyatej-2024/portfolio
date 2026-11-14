@@ -6,9 +6,9 @@ export default function AboutSection() {
   const prefersReducedMotion = useReducedMotion();
   const highlights = [
     { label: 'Degree', value: 'BSc (Hons) Cyber Security' },
-    { label: 'Result', value: 'First Class' },
+    { label: 'Result', value: 'First Class · 70.88% overall average' },
     { label: 'University', value: 'Teesside University · 2026' },
-    { label: 'Currently learning', value: 'Splunk · Microsoft Sentinel' },
+    { label: 'Career focus', value: 'IT Support → Infrastructure → Cybersecurity' },
   ];
 
   return (
@@ -16,26 +16,29 @@ export default function AboutSection() {
       <motion.div initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: prefersReducedMotion ? 0 : 0.3 }} className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-24">
         <div>
           <p className="section-kicker">Profile</p>
-          <h2 className="section-heading mt-4 max-w-2xl">Security-minded, practical, and ready to contribute.</h2>
+          <h2 className="section-heading mt-4 max-w-2xl">A practical foundation across IT, networks and security.</h2>
           <p className="body-copy mt-6 max-w-2xl">
-            I recently graduated with First Class honours from Teesside University. My project work focuses on phishing analysis, security event monitoring, and network defence. I enjoy learning by building tools and explaining how they work.
+            I am a First Class Cyber Security graduate from Teesside University. My academic work and independent projects have developed my understanding of networking, security analysis, software development and information governance. I learn by building, testing and documenting practical work.
+          </p>
+          <p className="body-copy mt-4 max-w-2xl">
+            Alongside my degree, I have worked in quality control and production. This has given me hands-on experience following procedures, checking information, maintaining records, entering data into workplace systems and raising issues when something needs attention.
           </p>
 
           <div className="mt-9">
             <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[#536158]">Areas of focus</h3>
             <ul className="mt-4 grid gap-x-8 gap-y-3 text-[15px] text-[#34433a] sm:grid-cols-2">
-              <li>SOC workflows and event monitoring</li>
-              <li>Threat detection and alert investigation</li>
-              <li>Phishing analysis and user awareness</li>
-              <li>Network defence and IPsec VPNs</li>
-              <li>Python and web tools for security</li>
-              <li>Splunk and Sentinel — currently learning</li>
+              <li>IT support and troubleshooting fundamentals</li>
+              <li>TCP/IP, DNS, DHCP and LAN concepts</li>
+              <li>Network monitoring and packet analysis</li>
+              <li>Security monitoring and alert investigation</li>
+              <li>Phishing awareness and vulnerability intelligence</li>
+              <li>Python, web development and API projects</li>
             </ul>
           </div>
 
           <div className="mt-9 border-l-2 border-[#285b47] pl-5">
-            <p className="text-sm font-semibold text-[#17231e]">Open to entry-level Cyber Security Analyst and SOC Analyst roles in the UK.</p>
-            <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="text-link mt-2 inline-block text-sm">LinkedIn profile and recent graduation update ↗</a>
+            <p className="text-sm font-semibold text-[#17231e]">Interested in IT Support, Service Desk, Junior Network Support, Application Support and entry-level Cybersecurity opportunities.</p>
+            <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="text-link mt-2 inline-block text-sm">LinkedIn profile ↗</a>
           </div>
         </div>
 
