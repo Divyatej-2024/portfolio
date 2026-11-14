@@ -8,7 +8,7 @@ export default function ContactSection() {
     e.preventDefault();
     const fields = new FormData(e.currentTarget as HTMLFormElement);
     const subject = String(fields.get('subject') || 'Portfolio enquiry');
-    const body = `Name: ${fields.get('name')}\nEmail: ${fields.get('email')}\n\n${fields.get('message')}`;
+    const body = `Name: ${fields.get('name')}\\nEmail: ${fields.get('email')}\\n\\n${fields.get('message')}`;
     window.location.href = `mailto:pdivyatej2003@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -18,7 +18,7 @@ export default function ContactSection() {
         <motion.div initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: prefersReducedMotion ? 0 : .3 }}>
           <p className="text-xs font-bold uppercase tracking-[0.17em] text-[#bfd0c4]">Contact</p>
           <h2 className="display-face mt-4 text-4xl font-medium tracking-tight sm:text-5xl">Let’s talk about the work.</h2>
-          <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#d5ded8]">I’m seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK. For opportunities, questions about my projects, or professional connections, please get in touch.</p>
+          <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#d5ded8]">I’m open to entry-level IT Support, Service Desk, Desktop Support, Junior Network Support, Application Support and cybersecurity opportunities. I’m also happy to discuss my projects and practical learning.</p>
           <div className="mt-9 space-y-5 border-t border-white/20 pt-6 text-sm">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.13em] text-[#bfd0c4]">Email</p>
@@ -27,6 +27,7 @@ export default function ContactSection() {
             <div className="flex gap-6">
               <a href="https://github.com/Divyatej-2024" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">GitHub ↗</a>
               <a href="https://www.linkedin.com/in/divya-tej-pendela-50ab98291/" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">LinkedIn ↗</a>
+              <a href="https://www.credly.com/users/divya-tej/" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">Credly ↗</a>
             </div>
           </div>
         </motion.div>
