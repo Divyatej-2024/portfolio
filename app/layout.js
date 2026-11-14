@@ -3,17 +3,15 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-
 export const metadata = {
-  title: "Divya Tej Pendela | Cyber Security Analyst Candidate",
-  description: "First Class Cyber Security graduate seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK. Explore projects, skills, and learning.",
+  title: "Divya Tej Pendela | IT Support, Networking & Cybersecurity",
+  description: "First Class BSc (Hons) Cyber Security graduate from Teesside University. Explore practical work in IT support, networking, security operations, vulnerability intelligence and software development.",
   openGraph: {
-    title: "Divya Tej Pendela | Cyber Security Analyst Candidate",
-    description: "First Class Cyber Security graduate seeking an entry-level Cyber Security Analyst or SOC Analyst role in the UK.",
+    title: "Divya Tej Pendela | IT Support, Networking & Cybersecurity",
+    description: "First Class Cyber Security graduate showcasing practical IT, networking, security operations and software projects.",
     type: "website",
   },
 };
-
 
 export default function RootLayout({ children }) {
   return (
