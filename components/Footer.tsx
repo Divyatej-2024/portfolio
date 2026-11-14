@@ -6,9 +6,10 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 text-sm sm:flex-row sm:items-center">
         <div>
           <p className="font-semibold text-[#17231e]">Divya Tej Pendela</p>
-          <p className="mt-1 text-xs text-[#69756e]">Cyber Security Graduate · SOC Analyst Candidate</p>
+          <p className="mt-1 text-xs text-[#69756e]">First Class Cyber Security Graduate · IT Support & Networking</p>
         </div>
         <nav aria-label="Footer links" className="flex flex-wrap gap-x-5 gap-y-2 text-[#536158]">
+          <a href="/#experience" className="hover:text-[#285b47]">Experience</a>
           <a href="/#projects" className="hover:text-[#285b47]">Projects</a>
           <a href="/#certifications" className="hover:text-[#285b47]">Credentials</a>
           <a href="https://github.com/Divyatej-2024" target="_blank" rel="noopener noreferrer" className="hover:text-[#285b47]">GitHub ↗</a>
